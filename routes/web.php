@@ -65,6 +65,6 @@ Route::get('/specialDetails' , 'App\Http\Controllers\Frontend\SpecialController@
 Route::get('/stores' , 'App\Http\Controllers\Frontend\StoreController@stores');
 Route::get('/storeDetails' , 'App\Http\Controllers\Frontend\StoreController@storeDetails');
 
-
+Route::get('/carts' , 'App\Http\Controllers\Frontend\CartController@carts');
 
 
