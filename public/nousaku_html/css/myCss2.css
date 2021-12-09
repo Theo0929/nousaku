@@ -1,0 +1,752 @@
+.flex{
+	display: flex;
+	flex-wrap: wrap;
+}
+.flex-1{
+	flex: 1;
+}
+.top-0{
+	top: 0;
+}
+.end-0{
+	right: 0;
+}
+.text-start{
+	text-align: left!important;
+}
+.text-center{
+	text-align: center !important;
+}
+.text-end{
+	text-align: right !important;
+}
+.black{
+	color: #000 !important;
+}
+/*
+.red{
+	color: #d94141 !important;
+}
+*/
+.brown{
+	color: #ab9361 !important;
+}
+.bg_white{
+	background-color: #fff;
+}
+.bg_gray{
+	background-color: #F2F1ED;
+}
+.bold{
+	font-weight: bold;
+}
+.hide{
+	display: none;
+}
+.show-lg, .show-xl{
+	display: none;
+}
+
+/* order */
+.order-section01{
+	padding-top: 150px;
+	padding-bottom: 30px;
+}
+.order_white_con{
+	background-color: #fff;
+	padding: 40px 30px;
+}
+.order_main_title{
+	font-size: 24px;
+	font-weight: bold;
+}
+.order_main_title_sub{
+	display: inline-block;
+	font-size: 16px;
+	color: #b39d70;
+}
+.order_main_title_abtn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 16px;
+	color: #b39d70;
+}
+.order_phone_input{
+	max-width: 480px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.main_form input[type="text"], .main_form input[type="tel"]{
+	width: 100%;
+	color: #000;
+	border: 1px solid #bfbfbf;
+	font-size: 16px;
+	padding: 5px;
+}
+.main_form input[type="checkbox"], .main_form input[type="radio"]{
+	position: relative;
+	top: 2px;
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+}
+.main_form select{
+	width: 100%;
+	color: #000;
+	border: 1px solid #bfbfbf;
+	font-size: 16px;
+	padding: 5px;
+}
+.input_right_btn_div{
+	flex: 0 0 100px;
+}
+.order_title_abtn{
+	display: inline-block;
+	color: #000;
+	background-color: #fff;
+	padding: 5px 60px;
+	text-align: center;
+	border: 1px solid #bbb;
+	border-radius: 50px;
+	margin-bottom: 15px;
+}
+.order_title_abtn:hover{
+	color: #b39d70;
+	border-color: #b39d70;
+}
+.order-section01 hr{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.order-section02{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.order_list{
+	position: relative;
+	display: block;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+.order_list_title{
+	background-color: #e6e6e6;
+}
+.order_list_th{
+	padding: 5px 15px;
+	text-align: center;
+}
+.order_list_box{
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+.order_list_box img{
+	display: block;
+	max-width: 100%;
+}
+.input_row{
+	margin-bottom: 10px;
+}
+.main_form label{
+	margin-bottom: 0;
+}
+.order_list_photo{
+	flex: 0 0 140px;
+	padding-right: 10px;
+}
+.order_list_service_input{
+	flex: 0 0 175px;
+	padding-right: 15px;
+}
+.order_list_box_udline{
+	padding-top: 10px;
+	border-bottom: 1px solid #bbb;
+}
+.order_list_box:last-child .order_list_box_udline{
+	display: none;
+}
+.order_list_service_abtn{
+	color: #b39d70;
+}
+.order_list_delete_btn{
+	font-size: 14px;
+	padding: 3px 12px;
+	border-radius: 30px;
+	background-color: #ddd;
+}
+.order_list_delete_btn:hover{
+	color: #fff;
+	background-color: #555050;
+}
+.order-section03{
+	margin-bottom: 20px;
+}
+.order_discount_box{
+	height: 100%;
+}
+.order_discount_box_title{
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.order_discount_input_text{
+	flex: 0 0 60px;
+	padding-top: 4px;
+}
+.input_right_btn{
+	display: block;
+	width: 100%;
+	padding: 5px 0;
+	font-size: 16px;
+	color: #fff;
+	background-color: #000;
+	border: 1px solid #000;
+	text-align: center;
+}
+.input_right_btn:hover{
+	color: #000;
+	background-color: #fff;
+}
+.order_discount_box_notice{
+	font-size: 12px;
+}
+.order_total_box{
+	height: 100%;
+	padding: 40px 30px 20px 30px;
+	background-color: #d2bfa1;
+}
+.order_total_box *{
+	font-size: 16px;
+}
+.order_total_box_title{
+	flex: 0 0 70px;
+}
+.order_total_box_total_div{
+	margin-top: 30px;
+	padding-top: 10px;
+	border-top: 1px solid #fff;
+}
+.order_total_box_total{
+	font-size: 22px;
+	color: #000;
+}
+.order-section04{
+	padding-top: 30px;
+	padding-bottom: 100px;
+}
+.order-section04 hr{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.order_personal_info{
+	margin-bottom: 30px;
+}
+.input_row_big{
+	margin-bottom: 30px;
+}
+.input_title{
+	margin-bottom: 15px;
+}
+.input_address_row{
+	margin-left: -4px;
+	margin-right: -4px;
+}
+.input_address_div{
+	flex: 0 0 33.33%;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+.input_address_div:first-child{
+	margin-left: 0;
+}
+.order_agree_items{
+	margin-bottom: 60px;
+}
+.order_agree_items_a{
+	color: #b39d70;
+}
+.btn_div{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.btn_yellow{
+	display: inline-block;
+	font-size: 20px;
+	background-color: #dec23b;
+	padding: 12px 80px;
+	border: 2px solid #dec23b;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.btn_yellow:hover{
+	color: #000;
+	background-color: #fff;
+}
+.btn_black{
+	display: inline-block;
+	font-size: 20px;
+	color: #fff;
+	background-color: #555050;
+	padding: 12px 80px;
+	border: 2px solid #555050;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.btn_black:hover{
+	color: #000;
+	background-color: #fff;
+}
+.btn_fw{
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
+}
+.select-center{
+	text-align-last: center;
+}
+.main_form textarea{
+	width: 100%;
+	min-height: 160px;
+	padding: 5px;
+}
+.order_list_title_mobile{
+	background-color: #e6e6e6;
+	padding: 5px 15px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+/* order-finish */
+.order_f_subtitle{
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.order_serial{
+	font-size: 30px;
+	color: #AB9361;
+}
+.order_time{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.order_f_discount_title{
+	flex: 0 0 100px;
+}
+.order_f_input_title{
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+.order_personal_info_text{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/* popup */
+.popup{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 50px 15px;
+	z-index: 9999;
+	display: none;
+}
+.popup_bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.6;
+}
+.popup_close_btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	cursor: pointer;
+}
+.popup_close_btn img{
+	width: 100%;
+}
+.order_popup_con{
+	position: relative;
+	max-width: 580px;
+	max-height: calc(100% - 40px);
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px 15px;
+	background-color: #fff;
+	overflow-y: auto;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.order_popup_top_sub{
+	position: absolute;
+	top: 5px;
+	right: 0;
+	color: #ab9361;
+}
+.order_popup_title{
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+.order_popup_con img{
+	max-width: 100%;
+}
+.order_popup_con hr{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.popup_lettering_example{
+	position: relative;
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+.popup_lettering_example_title{
+	margin-bottom: 20px;
+}
+.popup_lettering_example_btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 26px;
+	cursor: pointer;
+}
+.popup_lettering_example_btn.active img{
+	transform: rotate(180deg);
+}
+.popup_lettering_example img{
+	max-width: 100%;
+}
+.input_row_md{
+	margin-bottom: 20px;
+}
+.popup_lettering_info{
+	margin-top: 10px;
+}
+.popup_lettering_title{
+	flex: 0 0 110px;
+}
+.order_popup_title_sub{
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+
+/* buycar */
+.buycar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 9998;
+	display: none;
+}
+.buycar_bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.6;
+}
+.buycar_main{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 640px;
+	height: 100%;
+	background-color: #fff;
+}
+.buycar_head{
+	padding: 50px 40px 0 40px;
+	height: 100px;
+}
+.buycar_title{
+	position: relative;
+	padding-left: 40px;
+}
+.buycar_title_icon{
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 30px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+.buycar_title_icon img{
+	width: 100%;
+}
+.buycar_list{
+	height: calc(100% - 320px);
+	padding-left: 20px;
+	padding-right: 20px;
+	overflow-y: auto;
+}
+.buycar_list_item{
+	position: relative;
+	padding: 30px 20px;
+}
+.buycar_item_img{
+	flex: 0 0 240px; 
+}
+.buycar_item_img img{
+	width: 100%;
+}
+.buycar_item_con{
+	flex: 1;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.buycar_item_title{
+	font-size: 22px;
+}
+.buycar_item_sub{
+	margin-bottom: 15px;
+}
+.buycar_amount{
+	margin-bottom: 20px;
+}
+.buycar_amount_title{
+	flex: 0 0 50px;
+	padding-top: 4px;
+	padding-right: 10px;
+}
+.amount_select{
+	flex: 1;
+}
+.amount_select_btn{
+	flex: 0 0 36px;
+	width: 36px;
+	height: 36px;
+	padding: 13px;
+	border: 1px solid #bfbfbf;
+	cursor: pointer;
+}
+.amount_select_btn.left{
+	border-right: none;
+}
+.amount_select_btn.right{
+	border-left: none;
+}
+.amount_select_btn > div{
+	width: 10px;
+	height: 10px;
+	overflow: hidden;
+}
+.amount_select_btn img{
+	position: relative;
+	width: 100%;
+}
+.amount_select_btn:hover > div img{
+	top: -10px;
+}
+.amount_select_input{
+	flex: 1;
+	max-width: 100px;
+}
+.amount_select_input input{
+	text-align: center;
+}
+.buycar_item_price{
+	font-size: 18px;
+}
+.buycar_delete_btn{
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	font-size: 14px;
+	padding: 3px 12px;
+	border-radius: 30px;
+	background-color: #ddd;
+}
+.buycar_delete_btn:hover{
+	color: #fff;
+	background-color: #555050;
+}
+.buycar_list_item_botline{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.buycar_list_item_botline > div{
+	border-bottom: 1px solid #ccc;
+}
+.buycar_result{
+	height: 220px;
+	padding: 30px 40px;
+}
+.buycar_total{
+	font-size: 22px;
+	color: #AB9361;
+	text-align: center;
+	padding-bottom: 5px;
+}
+.buycar_result_info{
+	font-size: 13px;
+	height: 50px;
+	text-align: center;
+}
+.buycar_close{
+	position: absolute;
+	top: 0px;
+	right: 8px;
+	width: 30px;
+	height: 30px;
+	font-size: 26px;
+	text-align: center;
+	cursor: pointer;
+}
+
+/* login */
+.con-sm{
+	max-width: 540px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.login_title{
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 60px;
+}
+.login_phone_input{
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+.login_btn{
+	display: block;
+	max-width: 200px;
+	color: #fff;
+	background-color: #000;
+	padding: 12px 0;
+	border: 1px solid #000;
+	border-radius: 10px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.login_btn:hover{
+	color: #000;
+	background-color: #fff;
+}
+
+/* member */
+.member_name{
+	font-size: 22px;
+	color: #b39d70;
+}
+.member_order_box{
+	display: block;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #fff;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+.member_order_box:hover{
+	background-color: #f3f3f3;
+}
+
+@media (max-width: 1199px){
+	.show-xl{
+		display: block;
+	}
+}
+
+@media (max-width: 991px){
+	.order-section01{
+		padding-top: 80px;
+	}
+	.hide-lg{
+		display: none;
+	}
+	.show-lg{
+		display: block;
+	}
+	.text-lg-start{
+		text-align: left !important;
+	}
+	.order_main_title_sub{
+		display: block;
+		margin-top: 5px;
+	}
+	.order_main_title_abtn{
+		top: auto;
+		bottom: 0;
+	}
+	.order_white_con{
+		padding: 20px 15px;
+	}
+	.order_list_btns_div{
+		margin-top: 20px;
+	}
+	.order_list_box_udline{
+		padding-top: 30px;
+	}
+	.order_discount_box_stitle{
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+	.member_order_box .row > div{
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 768px){
+	.buycar_main{
+		width: calc(100% - 60px);
+	}
+	.buycar_head{
+		padding: 15px 15px 0 15px;
+		height: 50px;
+	}
+	.buycar_list{
+		height: calc(100% - 240px);
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.buycar_list_item{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.buycar_item_img{
+		flex: 0 0 100%;
+		margin-bottom: 5px;
+		padding-right: 60px;
+	}
+	.buycar_item_img img{
+		max-width: 150px;
+	}
+	.buycar_item_con{
+		flex: 0 0 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.buycar_delete_btn{
+		right: 5px;
+	}
+	.buycar_list_item_botline{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.buycar_result{
+		padding: 20px 15px;
+		height: 190px;
+	}
+}

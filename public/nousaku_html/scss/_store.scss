@@ -1,0 +1,119 @@
+@import "style";
+
+.store-section01 {
+    padding: 150px 0 get-vw(100px);
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: get-vw(500px);
+        background: #F2F1ED;
+        top: 100px;
+        left: 0;
+        z-index: -1;
+    }
+
+    @media (max-width: 991px) {
+        padding: 80px 0 0 0;
+
+        &:before {
+            top: 60px;
+            height: get-mvw(300px);
+        }
+    }
+
+    h2 {
+        font-size: 25px;
+        font-weight: 300;
+        position: relative;
+        margin-bottom: 70px;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 25px;
+            height: 1px;
+            background: $color;
+            bottom: -25px;
+            left: 0;
+        }
+    }
+
+    .right-list {
+        top: 150px;
+    }
+}
+
+.store-section02 {
+    padding-top: 720px;
+    margin-bottom: get-vw(100px);
+    background-position: center;
+
+    @media (max-width: 991px) {
+        padding-top: get-mvw(640px);
+    }
+
+    &-bg01 {
+        background-image: url(../images/store/img01.jpg);
+    }
+
+    &-bg02 {
+        background-image: url(../images/store/img02.jpg);
+    }
+
+    &-bg03 {
+        background-image: url(../images/store/img03.jpg);
+    }
+}
+
+.store-section03 {
+    margin-bottom: get-vw(100px);
+    text-align: center;
+
+    h2 {
+        color: $color;
+        font-size: 26px;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    p {
+        margin-bottom: 10px;
+        position: relative;
+        text-align: center;
+
+        span {
+            position: relative;
+            top: 2px;
+            right: 0;
+
+            img {
+                width: 10px;
+                display: initial;
+            }
+        }
+    }
+
+    .more {
+        padding: 40px 0;
+        width: 45px;
+        margin: 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .line {
+        width: 40px;
+        height: 1px;
+        background-color: $color;
+        display: block;
+        margin: 40px auto;
+    }
+}
