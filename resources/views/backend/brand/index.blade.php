@@ -39,7 +39,10 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                
+                <button type="button" class="btn btn-block btn-success col-2" 
+                data-toggle="modal" data-target="#modal-pBrandCreate"
+                data-target-id="0">新增</button>
+                <br>
                 <div class="table-responsive">
                   <table id="pBrandTable" class="table table-bordered table-hover">
                     <thead>
@@ -59,7 +62,7 @@
                         @if ($item->status == 0)
                         <p class="text-success">啟用</p>
                         @elseif ($item->status == 1)
-                        <p class="text-danger">停用</p>
+                        <p class="text-danger">未啟用</p>
                         @endif
                         </td>
                         <td>
@@ -84,7 +87,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="button" class="btn btn-block btn-primary btn-lg col-4">新增</button>
+                
               </div>
             </div>
             <!-- /.card -->
@@ -115,6 +118,24 @@
     </div>
     <!-- /.modal -->
 
+    <div class="modal fade" id="modal-pBrandCreate">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">品牌詳情</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="modal-body-pBrandCreate">
+
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
   </div>
   <!-- /.content-wrapper -->
 
@@ -138,6 +159,12 @@
       var id = $(e.relatedTarget).data('target-id');
       $.get('/backend/brandEdit/' + id , function(data){
         $('#modal-body-pBrandEdit').html(data);
+      });
+    });
+    $('#modal-pBrandCreate').on("show.bs.modal" , function(e){
+      var id = $(e.relatedTarget).data('target-id');
+      $.get('/backend/brandCreate' , function(data){
+        $('#modal-body-pBrandCreate').html(data);
       });
     });
   });

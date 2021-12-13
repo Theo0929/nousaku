@@ -2,9 +2,10 @@
 
 @section('headerColor') header_inside header_black @endsection
 @section('inside-menuColor') text-black @endsection
-
+@section('metaDataCSRF')
+    <meta name="csrf-token" content="{{ csrf_token()}}">
+@endsection
 @section('bodySections')
-
 <section class="products2-1-1-section01">
     <div class="container-custom">
         <div class="row">
@@ -117,14 +118,14 @@
                 <h3><span>irodori</span>飾品</h3>
 
                 <div class="with-btn">
-                    <h2>黃銅搖鈴 - 細</h2>
+                    <h2>{{$productEdit->pname}}</h2>
                     <a class="follow-bnt" href="">加入追蹤</a>
                 </div>
                 
                 <ul class="nav color-list">
-                    <li class="gold">金色</li>
-                    <li class="silver">銀色</li>
-                    <li class="rose-gold">玫瑰金</li>
+                    @foreach ($specList as $citem)
+                        <li class="gold">{{$citem->spec}}</li>
+                    @endforeach
                 </ul>
 
                 <div class="products-collapse-wrap">
@@ -132,49 +133,34 @@
                         <span></span>
                     </a>
                     <div class="collapse show" id="products-collapse">
-                      <p>
-                            極簡風格、滑順質感的桌上型黃銅搖鈴。運用富山縣高岡市傳統鑄造產業培育出來的鑄造技術，融合了現代生活的簡約造型。讓您每天享受黃銅獨特的清澈音色。
-                        </p>
+                    <p>
+                        {{$productEdit->description}}
+                    </p>
                     </div>
                 </div>
-                
-                <ul class="nav detail-list">
-                    <li><span>商品尺寸</span>H121φ40 mm</li>
-                    <li><span>材質</span>黃銅（銅60%・鋅40%）</li>
-                    <li><span>外箱尺寸</span>H57 W216 D70 mm</li>
-                    <li><span>產地</span>日本富山縣</li>
-                    <li><span>重量（含外箱）</span>229 g</li>
-                    <li><span>製造方式</span>手工鑄造</li>
-                </ul>
-                <form action="">
+                <form action="/cartAdd" id="addCartForm" method="POST">
                     <div class="form-group form-custom color-select gold">
-                        <select class="form-control" id="">
-                            <option>金色</option>
-                            <option>銀色</option>
-                            <option>玫瑰金</option>
+                        <select class="form-control" id="specList" name="specList">
+                            @foreach ($specList as $citem)
+                                <option value="{{$citem->productid}}">{{$citem->spec}}</li>
+                            @endforeach
                         </select>
                     </div>
-                    <div class="form-group form-custom">
-                        <select class="form-control" id="">
-                            <option>H121φ40 mm</option>
-                            <option>H121φ40 mm</option>
-                            <option>H121φ40 mm</option>
-                        </select>
-                    </div>
-                    <div class="form-group form-custom">
-                        <select class="form-control" id="">
-                            <option>H121φ40 mm</option>
-                            <option>H121φ40 mm</option>
-                            <option>H121φ40 mm</option>
-                        </select>
-                    </div>
+                    <ul class="nav detail-list">
+                        <li><span>商品尺寸</span>{{$productEdit->size}}</li> 
+                        <li><span>材質</span>{{$productEdit->material}}</li> 
+                        <li><span>外箱尺寸</span>無</li> 
+                        <li><span>產地</span>{{$productEdit->origin}}</li> 
+                        <li><span>重量（含外箱）</span>{{$productEdit->weight}}</li> 
+                        <li><span>製造方式</span>無</li> 
+                    </ul>
                     <div class="qtyform" id='postform' method='POST' action='#'>
                         <input type='button' value='-' class='qtyminus' field='quantity' />
-                        <input type='text' name='quantity' value='0' class='qty' />
+                        <input type='text' id='quantity' name='quantity' value='1' class='qty' />
                         <input type='button' value='+' class='qtyplus' field='quantity' />
                     </div>
                     <h4>NT$ 1,900</h4>
-                    <button type="submit" class="btn btn-cart">
+                    <button type="button" class="btn btn-cart" id="addCart"> 
                         加入購物車
                     </button>
                 </form>
@@ -388,5 +374,61 @@
         </div>
     </div>
 </section>
+<script>
+    $(function(){
+        $("#addCartForm").on("submit" , function(e){
+            e.preventDefault();
+            var postData = $(this).serializeArray();
+            var formUrl = $(this).attr("action");
+            $.ajaxSetup({
+                headers : {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: formUrl,
+                type: "POST",
+                data: postData,
+                success:function (data , textStatus , jqXHR) {
+                    alert(data.msg);
+                    //location.reload();
+                },
+                error: function (jqXHR , status , error){
+                    alert(stauts + " : " + error);
+                }
+            });
 
+        });
+        $("#addCart").on("click" , function(){
+            
+            if($.session.get('cartList') == null)
+            {
+                $.session.set('cartList' , $('#specList').val());
+                $.session.set('qtyList' , $('#quantity').val());
+                alert('已加入購物車');
+            }
+            else
+            {
+                var cartList = $.session.get('cartList').split(',');
+                var qtyList = $.session.get('qtyList').split(',');
+
+                var i = $.inArray($('#specList').val() , cartList);
+                if( i >= 0)
+                {
+                    qtyList[i] = parseInt(qtyList[i]) + parseInt($('#quantity').val());
+                }
+                else
+                {
+                    cartList.push($('#specList').val());
+                    qtyList.push($('#quantity').val());
+                }
+                $.session.set('qtyList' , qtyList);
+                $.session.set('cartList' , cartList);
+                alert('已加入購物車');               
+            }
+            //$.session.clear();
+        });
+    });
+
+</script>
 @endsection

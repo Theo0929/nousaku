@@ -20,7 +20,9 @@ use App\Http\Controllers\Frontend\FrontendController;
 Route::resource('/' , FrontendController::class);
 
 //------------backend-----------------------
-Route::resource('/backend/orders' , OrderController::class);
+Route::get('/backend' , 'App\Http\Controllers\Backend\OrderController@index');
+
+Route::get('/backend/orders' , 'App\Http\Controllers\Backend\OrderController@index');
 
 Route::get('/backend/ocardindex' , 'App\Http\Controllers\Backend\OCardController@ocardindex');
 Route::post('/backend/ocardtest' , 'App\Http\Controllers\Backend\OCardController@ocardtest');
@@ -28,14 +30,28 @@ Route::post('/backend/ocardtest' , 'App\Http\Controllers\Backend\OCardController
 Route::get('/backend/productsIndex' , 'App\Http\Controllers\Backend\ProductController@index');
 Route::get('/backend/productEdit/{pid}' , 'App\Http\Controllers\Backend\ProductController@edit');
 Route::post('/backend/productUpdate' , 'App\Http\Controllers\Backend\ProductController@update');
+Route::get('/backend/productCreate' , 'App\Http\Controllers\Backend\ProductController@create');
+Route::post('/backend/productInsert' , 'App\Http\Controllers\Backend\ProductController@insert');
 
 Route::get('/backend/brandIndex' , 'App\Http\Controllers\Backend\BrandController@index');
 Route::get('/backend/brandEdit/{pbid}' , 'App\Http\Controllers\Backend\BrandController@edit');
 Route::post('/backend/brandUpdate' , 'App\Http\Controllers\Backend\BrandController@update');
+Route::get('/backend/brandCreate' , 'App\Http\Controllers\Backend\BrandController@create');
+Route::post('/backend/brandInsert' , 'App\Http\Controllers\Backend\BrandController@insert');
+Route::post('/backend/brandDeleteFlag' , 'App\Http\Controllers\Backend\BrandController@deleteFlag');
 
 Route::get('/backend/categoryIndex' , 'App\Http\Controllers\Backend\CategoryController@index');
 Route::get('/backend/categoryEdit/{pcid}' , 'App\Http\Controllers\Backend\CategoryController@edit');
 Route::post('/backend/categoryUpdate' , 'App\Http\Controllers\Backend\CategoryController@update');
+Route::get('/backend/categoryCreate' , 'App\Http\Controllers\Backend\CategoryController@create');
+Route::post('/backend/categoryInsert' , 'App\Http\Controllers\Backend\CategoryController@insert');
+Route::post('/backend/categoryDeleteFlag' , 'App\Http\Controllers\Backend\CategoryController@deleteFlag');
+
+Route::get('/backend/categoryIndex' , 'App\Http\Controllers\Backend\CategoryController@index');
+Route::get('/backend/categoryEdit/{pcid}' , 'App\Http\Controllers\Backend\CategoryController@edit');
+Route::post('/backend/categoryUpdate' , 'App\Http\Controllers\Backend\CategoryController@update');
+
+
 
 Route::get('/backend/working' ,function () {
     return view('backend.working');
@@ -57,7 +73,7 @@ Route::get('/newsDetails' , 'App\Http\Controllers\Frontend\NewsController@newsDe
 Route::get('/products' , 'App\Http\Controllers\Frontend\ProductController@products');
 Route::get('/productsAll' , 'App\Http\Controllers\Frontend\ProductController@productsAll');
 Route::get('/productsNew' , 'App\Http\Controllers\Frontend\ProductController@productsNew');
-Route::get('/productsDetails' , 'App\Http\Controllers\Frontend\ProductController@productsDetails');
+Route::get('/productsDetails/{pid}' , 'App\Http\Controllers\Frontend\ProductController@productsDetails');
 
 Route::get('/specials' , 'App\Http\Controllers\Frontend\SpecialController@specials');
 Route::get('/specialDetails' , 'App\Http\Controllers\Frontend\SpecialController@specialDetails');
@@ -66,5 +82,4 @@ Route::get('/stores' , 'App\Http\Controllers\Frontend\StoreController@stores');
 Route::get('/storeDetails' , 'App\Http\Controllers\Frontend\StoreController@storeDetails');
 
 Route::get('/carts' , 'App\Http\Controllers\Frontend\CartController@carts');
-
-
+Route::post('/cartAdd' , 'App\Http\Controllers\Frontend\CartController@cartAdd');

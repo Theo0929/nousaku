@@ -15,8 +15,15 @@
     </div>
     <div class="form-group">
       <label for="status">狀態</label>
-      <input type="text" class="form-control" id="status" name="status" placeholder="狀態"
-      value="{{$item->status}}">
+      <select class="custom-select form-control-border" id="status" name="status">
+        @foreach ($statusList as $sitem)
+        <option value='{{$sitem[0]}}'
+          @if ($item->status == $sitem[0])
+              selected
+          @endif
+        >{{$sitem[1]}}</option>
+        @endforeach
+      </select>
     </div>
 </form>
 

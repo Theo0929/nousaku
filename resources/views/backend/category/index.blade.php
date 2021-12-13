@@ -39,7 +39,10 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                
+                <button type="button" class="btn btn-block btn-success col-2" 
+                data-toggle="modal" data-target="#modal-pCategoryCreate"
+                data-target-id="0">新增</button>
+                <br>
                 <div class="table-responsive">
                   <table id="pCategoryTable" class="table table-bordered table-hover">
                     <thead>
@@ -84,7 +87,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="button" class="btn btn-block btn-primary btn-lg col-4">新增</button>
+                
               </div>
             </div>
             <!-- /.card -->
@@ -114,7 +117,24 @@
       <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <div class="modal fade" id="modal-pCategoryCreate">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">類別詳情</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="modal-body-pCategoryCreate">
 
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
   </div>
   <!-- /.content-wrapper -->
 
@@ -138,6 +158,12 @@
       var id = $(e.relatedTarget).data('target-id');
       $.get('/backend/categoryEdit/' + id , function(data){
         $('#modal-body-pCategoryEdit').html(data);
+      });
+    });
+    $('#modal-pCategoryCreate').on("show.bs.modal" , function(e){
+      var id = $(e.relatedTarget).data('target-id');
+      $.get('/backend/categoryCreate' , function(data){
+        $('#modal-body-pCategoryCreate').html(data);
       });
     });
   });

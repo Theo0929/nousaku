@@ -7,6 +7,7 @@
 <!--<![endif]-->
 
 <head>
+    @yield('metaDataCSRF')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>能作</title>
@@ -24,6 +25,9 @@
     <script src="/nousaku_html/js/plugin.min.js"></script>
     <script src="/nousaku_html/js/main.js"></script>
     <script src="/nousaku_html/js/custom.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+    <script src="/handle-window-session-storage/jquery.session.js"></script>
+
 </head>
 
 <body class="body">

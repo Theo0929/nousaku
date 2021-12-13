@@ -1,5 +1,5 @@
 <div class="modal-body" >
-    
+
 @foreach ($productEdit as $item)
 
 <form role="form" id="productUpdateForm" action="/backend/productUpdate" method="POST">
@@ -12,16 +12,24 @@
         <div class="form-group">
           <label for="productno">製品編號</label>
           <input type="text" class="form-control" id="productno" name="productno" placeholder="製品編號"
-          value="{{$item->productno}}"
-          > 
+          value="{{$item->productno}}" > 
         </div>
       </div>
       <div class="col-6">
         <div class="form-group">
           <label for="brand">品牌</label>
-          <input type="text" class="form-control" id="brand" name="brand" placeholder="品牌"
+          {{-- <input type="text" class="form-control" id="brand" name="brand" placeholder="品牌"
           value="{{$item->brand}}"
-          >
+          > --}}
+          <select class="custom-select form-control-border" id="brand" name="brand">
+            @foreach ($brandList as $brandItem)
+            <option value='{{$brandItem->pbid}}'
+              @if ($item->brand == $brandItem->pbid)
+                  selected
+              @endif
+              >{{$brandItem->pbname}}</option>
+            @endforeach
+          </select>
         </div>
       </div>
     </div>
@@ -29,9 +37,15 @@
       <div class="col-6">
         <div class="form-group">
           <label for="category">類別</label>
-          <input type="text" class="form-control" id="category" name="category" placeholder="類別"
-          value="{{$item->category}}"
-          >
+          <select class="custom-select form-control-border" id="category" name="category">
+            @foreach ($categoryList as $categoryItem)
+            <option value='{{$categoryItem->pcid}}'
+              @if ($item->category == $categoryItem->pcid)
+                  selected
+              @endif
+              >{{$categoryItem->pcname}}</option>
+            @endforeach
+          </select>
         </div>
       </div>
       <div class="col-6">
@@ -109,9 +123,39 @@
       <div class="col-6">
         <div class="form-group">
           <label for="status">狀態</label>
-          <input type="text" class="form-control" id="status" name="status" placeholder="狀態"
-          value="{{$item->status}}"
+          <select class="custom-select form-control-border" id="status" name="status">
+            @foreach ($statusList as $sitem)
+            <option value='{{$sitem[0]}}'
+              @if ($item->status == $sitem[0])
+                  selected
+              @endif
+            >{{$sitem[1]}}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="spec">規格</label>
+          <input type="text" class="form-control" id="spec" name="spec" placeholder="規格"
+          value="{{$item->spec}}"
           >
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="color">顏色</label>
+          <select class="custom-select form-control-border" id="color" name="color">
+            @foreach ($colorList as $citem)
+            <option value='{{$citem[0]}}'
+              @if ($item->color == $citem[0])
+                  selected
+              @endif
+            >{{$citem[1]}}</option>
+            @endforeach
+          </select>
         </div>
       </div>
     </div>

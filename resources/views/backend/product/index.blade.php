@@ -39,7 +39,10 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                
+                <button type="button" class="btn btn-block btn-success col-2"
+                data-toggle="modal" data-target="#modal-productCreate"
+                data-target-id="0">新增</button>
+                <br>
                 <div class="table-responsive">
                   <table id="productTable" class="table table-bordered table-hover">
                     <thead>
@@ -86,7 +89,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="button" class="btn btn-block btn-primary btn-lg col-4">新增</button>
+                
               </div>
             </div>
             <!-- /.card -->
@@ -116,7 +119,24 @@
       <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <div class="modal fade" id="modal-productCreate">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">製品詳情</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="modal-body-productCreate">
 
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
   </div>
   <!-- /.content-wrapper -->
 
@@ -140,6 +160,13 @@
       var id = $(e.relatedTarget).data('target-id');
       $.get('/backend/productEdit/' + id , function(data){
         $('#modal-body-productEdit').html(data);
+      });
+    });
+
+    $('#modal-productCreate').on("show.bs.modal" , function(e){
+      var id = $(e.relatedTarget).data('target-id');
+      $.get('/backend/productCreate' , function(data){
+        $('#modal-body-productCreate').html(data);
       });
     });
   });

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Orders;
-use App\http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller

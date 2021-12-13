@@ -1,41 +1,36 @@
 <div class="modal-body" >
     
-@foreach ($pCategoryEdit as $item)
 
-<form role="form" id="pCategoryUpdateForm" action="/backend/categoryUpdate" method="POST">
+
+<form role="form" id="pBrandCreateForm" action="/backend/brandInsert" method="POST">
     <div class="form-group">
-        <label for="pcid">系統編號:{{$item->pcid}}</label>
-        <input type="hidden" name="pcid" value="{{$item->pcid}}">
+        <label for="pbid">系統編號:</label>
+        <input type="hidden" name="pbid" value="">
     </div>
     <div class="form-group">
-      <label for="pcname">類別名稱</label>
-      <input type="text" class="form-control" id="pcname" name="pcname" placeholder="品牌名稱"
-      value="{{$item->pcname}}"
+      <label for="pname">品牌名稱</label>
+      <input type="text" class="form-control" id="pbname" name="pbname" placeholder="品牌名稱"
+      value=""
       >
     </div>
     <div class="form-group">
       <label for="status">狀態</label>
       <select class="custom-select form-control-border" id="status" name="status">
         @foreach ($statusList as $sitem)
-        <option value='{{$sitem[0]}}'
-          @if ($item->status == $sitem[0])
-              selected
-          @endif
-        >{{$sitem[1]}}</option>
+        <option value='{{$sitem[0]}}'>{{$sitem[1]}}</option>
         @endforeach
       </select>
     </div>
 </form>
 
-@endforeach
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-primary" id="pCategoryUpdate">更新</button>
+    <button type="button" class="btn btn-success" id="pBrandCreate">新增</button>
     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 </div>
 <script>
     $(function () {
-        $("#pCategoryUpdateForm").on("submit" , function(e){
+        $("#pBrandCreateForm").on("submit" , function(e){
             e.preventDefault();
             var postData = $(this).serializeArray();
             var formUrl = $(this).attr("action");
@@ -58,8 +53,8 @@
             });
 
         });
-        $("#pCategoryUpdate").on("click" , function(){
-            $("#pCategoryUpdateForm").submit();
+        $("#pBrandCreate").on("click" , function(){
+            $("#pBrandCreateForm").submit();
         });
     });
 </script>
