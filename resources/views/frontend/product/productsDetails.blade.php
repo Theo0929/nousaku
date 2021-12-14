@@ -139,6 +139,8 @@
                     </div>
                 </div>
                 <form action="/cartAdd" id="addCartForm" method="POST">
+                    <input type="hidden" name="productid" value="{{$productEdit->productid}}">
+                    <input type="hidden" name="pname" value="{{$productEdit->pname}}">
                     <div class="form-group form-custom color-select gold">
                         <select class="form-control" id="specList" name="specList">
                             @foreach ($specList as $citem)
@@ -159,7 +161,7 @@
                         <input type='text' id='quantity' name='quantity' value='1' class='qty' />
                         <input type='button' value='+' class='qtyplus' field='quantity' />
                     </div>
-                    <h4>NT$ 1,900</h4>
+                    <h4>NT$ {{$productEdit->price}}</h4>
                     <button type="button" class="btn btn-cart" id="addCart"> 
                         加入購物車
                     </button>
@@ -400,33 +402,33 @@
 
         });
         $("#addCart").on("click" , function(){
-            
-            if($.session.get('cartList') == null)
-            {
-                $.session.set('cartList' , $('#specList').val());
-                $.session.set('qtyList' , $('#quantity').val());
-                alert('已加入購物車');
-            }
-            else
-            {
-                var cartList = $.session.get('cartList').split(',');
-                var qtyList = $.session.get('qtyList').split(',');
+            $("#addCartForm").submit();
+            // if($.session.get('cartList') == null)
+            // {
+            //     $.session.set('cartList' , $('#specList').val());
+            //     $.session.set('qtyList' , $('#quantity').val());
+            //     alert('已加入購物車');
+            // }
+            // else
+            // {
+            //     var cartList = $.session.get('cartList').split(',');
+            //     var qtyList = $.session.get('qtyList').split(',');
 
-                var i = $.inArray($('#specList').val() , cartList);
-                if( i >= 0)
-                {
-                    qtyList[i] = parseInt(qtyList[i]) + parseInt($('#quantity').val());
-                }
-                else
-                {
-                    cartList.push($('#specList').val());
-                    qtyList.push($('#quantity').val());
-                }
-                $.session.set('qtyList' , qtyList);
-                $.session.set('cartList' , cartList);
-                alert('已加入購物車');               
-            }
-            //$.session.clear();
+            //     var i = $.inArray($('#specList').val() , cartList);
+            //     if( i >= 0)
+            //     {
+            //         qtyList[i] = parseInt(qtyList[i]) + parseInt($('#quantity').val());
+            //     }
+            //     else
+            //     {
+            //         cartList.push($('#specList').val());
+            //         qtyList.push($('#quantity').val());
+            //     }
+            //     $.session.set('qtyList' , qtyList);
+            //     $.session.set('cartList' , cartList);
+            //     alert('已加入購物車');               
+            // }
+            // //$.session.clear();
         });
     });
 

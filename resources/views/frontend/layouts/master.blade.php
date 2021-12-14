@@ -22,12 +22,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300&display=swap">
     <link rel="stylesheet" href="/nousaku_html/css/custom.css">
     <link rel="stylesheet" href="/nousaku_html/css/myCss.css">
+    <link rel="stylesheet" href="/nousaku_html/css/myCss2.css">
     <script src="/nousaku_html/js/plugin.min.js"></script>
     <script src="/nousaku_html/js/main.js"></script>
     <script src="/nousaku_html/js/custom.js"></script>
+    <script src="/nousaku_html/js/custom2.js"></script>
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
     <script src="/handle-window-session-storage/jquery.session.js"></script>
-
 </head>
 
 <body class="body">
@@ -41,7 +42,7 @@
                 </div>
                 <ul class="nav top-menu-nav">
                     <li>
-                        <a class="car" href=""></a>
+                        <a class="car" href="/cart"></a>
                     </li>
                     <li class="d-lg-block d-none">
                         <a class="fb " href=""></a>

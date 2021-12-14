@@ -23,6 +23,8 @@ Route::resource('/' , FrontendController::class);
 Route::get('/backend' , 'App\Http\Controllers\Backend\OrderController@index');
 
 Route::get('/backend/orders' , 'App\Http\Controllers\Backend\OrderController@index');
+Route::get('/backend/orderEdit/{orderid}' , 'App\Http\Controllers\Backend\OrderController@orderEdit');
+Route::get('/backend/orderUpdate' , 'App\Http\Controllers\Backend\OrderController@orderUpdate');
 
 Route::get('/backend/ocardindex' , 'App\Http\Controllers\Backend\OCardController@ocardindex');
 Route::post('/backend/ocardtest' , 'App\Http\Controllers\Backend\OCardController@ocardtest');
@@ -81,5 +83,7 @@ Route::get('/specialDetails' , 'App\Http\Controllers\Frontend\SpecialController@
 Route::get('/stores' , 'App\Http\Controllers\Frontend\StoreController@stores');
 Route::get('/storeDetails' , 'App\Http\Controllers\Frontend\StoreController@storeDetails');
 
-Route::get('/carts' , 'App\Http\Controllers\Frontend\CartController@carts');
+Route::get('/cart' , 'App\Http\Controllers\Frontend\CartController@cart');
+Route::get('/cartOrder/{orderid}' , 'App\Http\Controllers\Frontend\CartController@cartOrder');
 Route::post('/cartAdd' , 'App\Http\Controllers\Frontend\CartController@cartAdd');
+Route::post('/cartCheckout' , 'App\Http\Controllers\Frontend\CartController@cartCheckout');

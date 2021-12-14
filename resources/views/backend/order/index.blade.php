@@ -54,138 +54,44 @@
                     <thead>
                     <tr>
                       <th>訂單編號</th>
-                      <th>內容</th>
+                      <th>訂購人</th>
                       <th>狀態</th>
+                      <th>訂單金額</th>
+                      <th>下單日期</th>
                       <th>管理功能</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td><a href="">OR9842</a></td>
-                      <td>TAMA</td>
-                      <td><span class="badge badge-success">已出貨</span></td>
-                      <td>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-primary btn-sm">詳情</button>
+                      @foreach ($orderList as $oitem)
+                      <tr>
+                        <td><a href="">{{$oitem->orderid}}</a></td>
+                        <td>{{$oitem->receivename}}</td>
+                        <td>
+                        @if ($oitem->status == 0)
+                          <span class="badge badge-success">處理中</span>
+                        @elseif($oitem->status == 1)
+                            已出貨
+                        @elseif($oitem->status == 2)
+                            已取消   
+                        @endif
+                        </span></td>
+                        <td><span class="badge badge-success"></span></td>
+                        <td>{{$oitem->updatedate}}</td>
+                        <td>
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <button type="button" class="btn btn-block bg-gradient-primary btn-sm" 
+                                  data-toggle="modal" data-target="#modal-orderEdit"
+                                  data-target-id="{{$oitem->orderid}}">詳情</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button type="button" class="btn btn-block bg-gradient-danger btn-sm">取消</button>
+                              </div>
                             </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-success btn-sm">完成</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-danger btn-sm">取消</button>
-                            </div>
-                          </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="">OR1848</a></td>
-                      <td>櫻色富士山風情杯</td>
-                      <td><span class="badge badge-warning">待出貨</span></td>
-                      <td>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-primary btn-sm">詳情</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-success btn-sm">完成</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-danger btn-sm">取消</button>
-                            </div>
-                          </div>
-                       </td>
-                    </tr>
-                    <tr>
-                      <td><a href="">OR7429</a></td>
-                      <td>KAGO</td>
-                      <td><span class="badge badge-danger">已送達</span></td>
-                      <td>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-primary btn-sm">詳情</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-success btn-sm">完成</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-danger btn-sm">取消</button>
-                            </div>
-                          </div>
-                       </td>
-                    </tr>
-                    <tr>
-                      <td><a href="">OR7429</a></td>
-                      <td>貝爾·斯利姆</td>
-                      <td><span class="badge badge-info">處理中</span></td>
-                      <td>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-primary btn-sm">詳情</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-success btn-sm">完成</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-danger btn-sm">取消</button>
-                            </div>
-                          </div>
-                       </td>
-                    </tr>
-                    <tr>
-                      <td><a href="">OR1848</a></td>
-                      <td>黃銅花型底座</td>
-                      <td><span class="badge badge-warning">未付款</span></td>
-                      <td>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-primary btn-sm">詳情</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-success btn-sm">完成</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-danger btn-sm">取消</button>
-                            </div>
-                          </div>
-                       </td>
-                    </tr>
-                    <tr>
-                      <td><a href="">OR7429</a></td>
-                      <td>啤酒杯</td>
-                      <td><span class="badge badge-danger">已送達</span></td>
-                      <td>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-primary btn-sm">詳情</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-success btn-sm">完成</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-danger btn-sm">取消</button>
-                            </div>
-                          </div>
-                       </td>
-                    </tr>
-                    <tr>
-                      <td><a href="">OR9842</a></td>
-                      <td>花連指手套</td>
-                      <td><span class="badge badge-success">出貨中</span></td>
-                      <td>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-primary btn-sm">詳情</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-success btn-sm">完成</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-block bg-gradient-danger btn-sm">取消</button>
-                            </div>
-                          </div>
-                       </td>
-                    </tr>
+                        </td>
+                      </tr>
+                      @endforeach
+                    
                     </tbody>
                   </table>
 
@@ -207,4 +113,50 @@
   </div>
   <!-- /.content-wrapper -->
 
+  <div class="modal fade" id="modal-orderEdit">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">訂單詳情</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="modal-body-orderEdit">
+
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+@endsection
+
+@section('pageScript')
+<script>
+  $(function () {
+    $('#ordersTable').DataTable({
+      "stateSave": true,
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": false,
+      "autoWidth": false,
+      "responsive": true,
+    });
+
+    $('#modal-orderEdit').on("show.bs.modal" , function(e){
+      var id = $(e.relatedTarget).data('target-id');
+      $.get('/backend/orderEdit/' + id , function(data){
+        $('#modal-body-orderEdit').html(data);
+      });
+    });
+
+  });
+
+  
+</script>
 @endsection

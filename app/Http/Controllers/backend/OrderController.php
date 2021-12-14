@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Orders;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
     /**
@@ -16,43 +16,13 @@ class OrderController extends Controller
     public function index()
     {
         //
+        $orderList = DB::select('select * from orders where deleteflag = 0');
         $binding = [
             'user' => 'user',
             'result' => 'orders',
+            'orderList' => $orderList
         ];
         return view('backend.order.index' , $binding);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Orders  $orders
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Orders $orders)
-    {
-        //
     }
 
     /**
@@ -61,9 +31,17 @@ class OrderController extends Controller
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orders $orders)
+    public function orderEdit(Request $request)
     {
         //
+        $orderEdit = DB::select('select * from orders where deleteflag = 0 and orderid= ?' , array($request->orderid));
+        $binding = [
+            'user' => 'user',
+            'result' => 'orders',
+            'orderEdit' => $orderEdit,
+            
+        ];
+        return view('backend.order.edit', $binding);
     }
 
     /**
