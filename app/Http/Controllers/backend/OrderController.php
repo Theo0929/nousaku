@@ -6,6 +6,7 @@ use App\Models\Orders;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Exception;
 class OrderController extends Controller
 {
     /**
@@ -35,10 +36,13 @@ class OrderController extends Controller
     {
         //
         $orderEdit = DB::select('select * from orders where deleteflag = 0 and orderid= ?' , array($request->orderid));
+        $orderProduct = DB::select('select op.* , p.productno , p.jancode from order_product op join product p on op.productid = p.productid 
+        where op.deleteflag = 0 and p.deleteFlag = 0 and op.orderid = ?' , array($request->orderid));
         $binding = [
             'user' => 'user',
             'result' => 'orders',
             'orderEdit' => $orderEdit,
+            'orderProduct' => $orderProduct,
             
         ];
         return view('backend.order.edit', $binding);
@@ -51,9 +55,32 @@ class OrderController extends Controller
      * @param  \App\Models\Orders  $orders
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Orders $orders)
+    public function orderUpdate(Request $request, Orders $orders)
     {
-        //
+        try{
+            $updatesql = 
+            'update orders SET status=:status 
+            WHERE orderid = :orderid';
+
+            DB::beginTransaction();
+            DB::update($updatesql , [
+                'status' => $request->status ,
+                'orderid' => $request->orderid ,
+            ]);
+
+            DB::commit();
+            $msg = "更新成功";
+        }
+        catch(Exception $exception)
+        {
+            DB::rollBack();
+            $msg = "更新失敗 " + $exception->getMessage();
+        }
+
+        $binding = [
+            'msg' => $msg,
+        ];
+        return response()->json( $binding , 200);
     }
 
     /**

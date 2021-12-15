@@ -24,7 +24,7 @@ Route::get('/backend' , 'App\Http\Controllers\Backend\OrderController@index');
 
 Route::get('/backend/orders' , 'App\Http\Controllers\Backend\OrderController@index');
 Route::get('/backend/orderEdit/{orderid}' , 'App\Http\Controllers\Backend\OrderController@orderEdit');
-Route::get('/backend/orderUpdate' , 'App\Http\Controllers\Backend\OrderController@orderUpdate');
+Route::post('/backend/orderUpdate' , 'App\Http\Controllers\Backend\OrderController@orderUpdate');
 
 Route::get('/backend/ocardindex' , 'App\Http\Controllers\Backend\OCardController@ocardindex');
 Route::post('/backend/ocardtest' , 'App\Http\Controllers\Backend\OCardController@ocardtest');

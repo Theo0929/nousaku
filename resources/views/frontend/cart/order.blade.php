@@ -55,34 +55,38 @@
                                 @if ($cpitem->extraservice1 == 0)
                                     無包裝
                                 @elseif($cpitem->extraservice1 == 1)
-                                一般包裝 +0
+                                    一般包裝 +0
                                 @elseif($cpitem->extraservice1 == 2)
-                                特殊包裝 +150
+                                    特殊包裝 +150
                                 @endif
                             </div>
                             <div class="flex input_row">
-                                <div class="order_list_service_input">
-                                    @if ($cpitem->extraservice2 != "")
-                                        刻字服務 +350
-                                    @else
-                                        無刻字服務
-                                    @endif
+                                @if ($cpitem->extraservice2 == "on")
+                                    <div class="order_list_service_input">
+                                    刻字服務 +350
                                     </div>
-                                <div class="flex-1">
-                                    <a href="javascript:;" onclick="popup('#popup_lettering')" class="order_list_service_abtn">詳情</a>
-                                </div>
+                                    <div class="flex-1">
+                                        <a href="javascript:;" onclick="popup('#popup_lettering')" class="order_list_service_abtn">詳情</a>
+                                    </div>
+                                @else
+                                    <div class="order_list_service_input">
+                                    無刻字服務
+                                    </div>
+                                @endif
                             </div>
                             <div class="flex input_row">
+                                @if ($cpitem->extraservice3 == "on")
                                 <div class="order_list_service_input">
-                                    @if ($cpitem->extraservice3 != "")
-                                        萬用小卡 +0
-                                    @else
-                                        無萬用小卡
-                                    @endif
+                                    萬用小卡 +0
                                 </div>
                                 <div class="flex-1">
                                     <a href="javascript:;" onclick="popup('#popup_card')" class="order_list_service_abtn">詳情</a>
                                 </div>
+                                @else
+                                <div class="order_list_service_input">
+                                    無萬用小卡
+                                </div>
+                                @endif
                             </div>
                         </div>
                         <div class="col-lg-2">

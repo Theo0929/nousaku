@@ -96,9 +96,9 @@
                             <div class="flex input_row">
                                 <div class="order_list_service_input">
                                     <label>
-                                        <input type="hidden" name="extraService2[{{$loop->index}}]" value="3">
+                                        <input type="hidden" name="extraService2[{{$loop->index}}]" value="-1">
                                         <input type="checkbox" id="extraService2_{{$loop->index}}" 
-                                        name="extraService2[{{$loop->index}}]" value="{{$loop->index}}">刻字服務 +350
+                                        name="extraService2[{{$loop->index}}]" onchange="countExtraService({{$loop->index}})">刻字服務 +350
                                     </label>
                                 </div>
                                 <div class="flex-1">
@@ -108,7 +108,7 @@
                             <div class="flex input_row">
                                 <div class="order_list_service_input">
                                     <label>
-                                        <input type="hidden" name="extraService3[{{$loop->index}}]" value="3">
+                                        <input type="hidden" name="extraService3[{{$loop->index}}]" value="-1">
                                         <input type="checkbox" id="extraService3_{{$loop->index}}" 
                                         name="extraService3[{{$loop->index}}]">萬用小卡 +0
                                     </label>
@@ -262,7 +262,7 @@
                     <div class="input_row_big">
                         <div class="input_title">付款方式</div>
                         <select id="payway" name="payway">
-                            <option value="1">信用卡</option>
+                            <option value="0">信用卡</option>
                         </select>
                     </div>
                 </div>
@@ -587,17 +587,17 @@
 
             });
         
-            $("input[name^='extraService2']").change(function (e) {
+            // $("input[name^='extraService2']").change(function (e) {
 
-                countExtraService($(this).val());
-                checked = $(this)
-                //判斷是否選取
-                if ($(this).is(':checked')) {
-                } 
-                else 
-                {
-                }
-            });
+            //     countExtraService($(this).val());
+            //     checked = $(this)
+            //     //判斷是否選取
+            //     if ($(this).is(':checked')) {
+            //     } 
+            //     else 
+            //     {
+            //     }
+            // });
 
         });
         function countExtraService(index)

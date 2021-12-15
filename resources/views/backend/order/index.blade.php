@@ -70,12 +70,14 @@
                         @if ($oitem->status == 0)
                           <span class="badge badge-success">處理中</span>
                         @elseif($oitem->status == 1)
-                            已出貨
+                          <span class="badge badge-primary">未出貨</span>
                         @elseif($oitem->status == 2)
-                            已取消   
+                          <span class="badge badge-info">已出貨</span>  
+                        @elseif($oitem->status == 3)
+                          <span class="badge badge-danger">已取消</span>   
                         @endif
                         </span></td>
-                        <td><span class="badge badge-success"></span></td>
+                        <td>{{$oitem->totalprice}}</td>
                         <td>{{$oitem->updatedate}}</td>
                         <td>
                           <div class="row">
@@ -114,7 +116,7 @@
   <!-- /.content-wrapper -->
 
   <div class="modal fade" id="modal-orderEdit">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">訂單詳情</h4>

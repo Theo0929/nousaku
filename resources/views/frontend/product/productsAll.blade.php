@@ -10,7 +10,7 @@
     <div class="title2">Products</div>
 </section>
 
-
+<div id="productSct04">
 <section class="section04">
     <div class="container-fluid"> 
         <div class="row">
@@ -85,5 +85,5 @@
         </div>
     </div>
 </section>
-
+</div>
 @endsection
