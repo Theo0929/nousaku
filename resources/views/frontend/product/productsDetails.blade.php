@@ -403,32 +403,6 @@
         });
         $("#addCart").on("click" , function(){
             $("#addCartForm").submit();
-            // if($.session.get('cartList') == null)
-            // {
-            //     $.session.set('cartList' , $('#specList').val());
-            //     $.session.set('qtyList' , $('#quantity').val());
-            //     alert('已加入購物車');
-            // }
-            // else
-            // {
-            //     var cartList = $.session.get('cartList').split(',');
-            //     var qtyList = $.session.get('qtyList').split(',');
-
-            //     var i = $.inArray($('#specList').val() , cartList);
-            //     if( i >= 0)
-            //     {
-            //         qtyList[i] = parseInt(qtyList[i]) + parseInt($('#quantity').val());
-            //     }
-            //     else
-            //     {
-            //         cartList.push($('#specList').val());
-            //         qtyList.push($('#quantity').val());
-            //     }
-            //     $.session.set('qtyList' , qtyList);
-            //     $.session.set('cartList' , cartList);
-            //     alert('已加入購物車');               
-            // }
-            // //$.session.clear();
         });
     });
 

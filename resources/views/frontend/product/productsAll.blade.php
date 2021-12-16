@@ -3,15 +3,13 @@
 @section('headerColor') header_inside header_black @endsection
 @section('inside-menuColor') text-black @endsection
 
+@section('scriptSection')
+
+@endsection
+
 @section('bodySections')
 
-<section class="products-section-kv">
-    <div class="title">製品</div>
-    <div class="title2">Products</div>
-</section>
-
-<div id="productSct04">
-<section class="section04">
+<section class="section04 product2-1-section01">
     <div class="container-fluid"> 
         <div class="row">
             <div class="col-lg-3 product-sidebar">
@@ -77,13 +75,20 @@
                             </div>
                         </div>
                         @endforeach
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-</div>
+
+<script>
+    $(function(){
+        $.get('/productSection04' , function(data){
+            //$('#productSection04').append(data);
+            //$('#productSection04').append(data);
+        });
+    });
+
+</script>
 @endsection

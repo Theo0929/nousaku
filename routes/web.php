@@ -60,6 +60,7 @@ Route::get('/backend/working' ,function () {
 });
 //------------frontend-----------------------
 
+Route::get('/topMenu2' , 'App\Http\Controllers\Frontend\FrontMasterController@topMenu2');
 
 Route::get('/about1' , 'App\Http\Controllers\Frontend\AboutController@about1');
 Route::get('/about2' , 'App\Http\Controllers\Frontend\AboutController@about2');
@@ -76,6 +77,7 @@ Route::get('/products' , 'App\Http\Controllers\Frontend\ProductController@produc
 Route::get('/productsAll' , 'App\Http\Controllers\Frontend\ProductController@productsAll');
 Route::get('/productsNew' , 'App\Http\Controllers\Frontend\ProductController@productsNew');
 Route::get('/productsDetails/{pid}' , 'App\Http\Controllers\Frontend\ProductController@productsDetails');
+Route::get('/productSection04' , 'App\Http\Controllers\Frontend\ProductController@productSection04');
 
 Route::get('/specials' , 'App\Http\Controllers\Frontend\SpecialController@specials');
 Route::get('/specialDetails' , 'App\Http\Controllers\Frontend\SpecialController@specialDetails');
