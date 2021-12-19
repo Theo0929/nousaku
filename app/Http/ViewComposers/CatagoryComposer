@@ -1,0 +1,18 @@
+<?php 
+namespace App\Http\ViewComposers;
+
+class CategoryComposer
+    
+{
+    protected  $category;
+
+    public  function  __construct($categoryList) 
+    { 
+        $this->categoryList  =  $categoryList;
+    }
+
+    public function compose($view)
+    {
+        $view->with('categoryList', $this->categoryList->all());
+    }
+}

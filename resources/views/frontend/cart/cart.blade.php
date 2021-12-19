@@ -542,125 +542,129 @@
 		</div>
 		<div class="buycar_close">×</div>
 	</div>
-    <script>
-        $(function(){
-            $('#keepShopping').on('click' , function(e){
-                location.assign("/productsAll");
-            });
-            $('#checkOut').on('click' , function(e){
-                if ($('#check1').is(':checked')) {
-                    if ($('#check2').is(':checked')) {
-                        $("#cartCheckoutForm").submit();
-                    } 
-                    else 
-                    {
-                        alert('請同意隱私權政策與服務條款內容!');
-                    }   
+
+@endsection
+
+@section('scriptSection')
+<script>
+    $(function(){
+        $('#keepShopping').on('click' , function(e){
+            location.assign("/productsAll");
+        });
+        $('#checkOut').on('click' , function(e){
+            if ($('#check1').is(':checked')) {
+                if ($('#check2').is(':checked')) {
+                    $("#cartCheckoutForm").submit();
                 } 
                 else 
                 {
-                    alert('請同意代為處理銷售憑證!');
+                    alert('請同意隱私權政策與服務條款內容!');
+                }   
+            } 
+            else 
+            {
+                alert('請同意代為處理銷售憑證!');
+            }
+        });
+
+        $("#cartCheckoutForm").on("submit" , function(e){
+            e.preventDefault();
+            var postData = $(this).serializeArray();
+            var formUrl = $(this).attr("action");
+            $.ajaxSetup({
+                headers : {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: formUrl,
+                type: "POST",
+                data: postData,
+                success:function (data , textStatus , jqXHR) {
+                    alert(data.msg);
+                    location.assign("/cartOrder/" + data.orderid);
+                },
+                error: function (jqXHR , status , error){
+                    alert(stauts + " : " + error);
                 }
             });
 
-            $("#cartCheckoutForm").on("submit" , function(e){
-                e.preventDefault();
-                var postData = $(this).serializeArray();
-                var formUrl = $(this).attr("action");
-                $.ajaxSetup({
-                    headers : {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $.ajax({
-                    url: formUrl,
-                    type: "POST",
-                    data: postData,
-                    success:function (data , textStatus , jqXHR) {
-                        alert(data.msg);
-                        location.assign("/cartOrder/" + data.orderid);
-                    },
-                    error: function (jqXHR , status , error){
-                        alert(stauts + " : " + error);
-                    }
-                });
-
-            });
-        
-            // $("input[name^='extraService2']").change(function (e) {
-
-            //     countExtraService($(this).val());
-            //     checked = $(this)
-            //     //判斷是否選取
-            //     if ($(this).is(':checked')) {
-            //     } 
-            //     else 
-            //     {
-            //     }
-            // });
-
         });
-        function countExtraService(index)
-        {
-            var extraPrice = $("#extraServicePrice_" + index).val();
-            var firstPrice = $("#firstPrice_" + index).val();
-            var checkPrice = $("#checkPrice").val();
-            var totalPrice = $("#totalPrice").val();
-            if($("#extraService2_" + index).prop("checked"))
-            {
-                extraPrice = parseInt(extraPrice) + 350;
-                firstPrice = parseInt(firstPrice) + 350;
-                checkPrice = parseInt(checkPrice) + 350;
-                totalPrice = parseInt(totalPrice) + 350;
-            }
-            else
-            {
-                extraPrice = parseInt(extraPrice) - 350;
-                firstPrice = parseInt(firstPrice) - 350;
-                checkPrice = parseInt(checkPrice) - 350;
-                totalPrice = parseInt(totalPrice) - 350;
-            }
-            $("#extraServicePriceDiv_" + index).html('NT$ ' + extraPrice);
-            $("#extraServicePrice_" + index).val(extraPrice);
-            $("#firstPriceDiv_" + index).html('NT$ ' + firstPrice);
-            $("#firstPrice_" + index).val(firstPrice);
-            $("#checkPriceDiv").html('NT$ ' + checkPrice);
-            $("#checkPrice").val(checkPrice);
-            $("#totalPriceDiv").html('NT$ ' + totalPrice);
-            $("#totalPrice").val(totalPrice);
-        };
-        function countExtraService2(index)
-        {
-            var extraPrice = $("#extraServicePrice_" + index).val();
-            var firstPrice = $("#firstPrice_" + index).val();
-            var checkPrice = $("#checkPrice").val();
-            var totalPrice = $("#totalPrice").val();
+    
+        // $("input[name^='extraService2']").change(function (e) {
 
-            if($("#extraService1_" + index).val() == 2)
-            {
-                extraPrice = parseInt(extraPrice) + 150;
-                firstPrice = parseInt(firstPrice) + 150;
-                checkPrice = parseInt(checkPrice) + 150;
-                totalPrice = parseInt(totalPrice) + 150;
-                $("#extraService1temp_" + index).val(1);
-            }
-            else if($("#extraService1temp_" + index).val() == 1)
-            {
-                extraPrice = parseInt(extraPrice) - 150;
-                firstPrice = parseInt(firstPrice) - 150;
-                checkPrice = parseInt(checkPrice) - 150;
-                totalPrice = parseInt(totalPrice) - 150;
-                $("#extraService1temp_" + index).val(0);
-            }
-            $("#extraServicePriceDiv_" + index).html('NT$ ' + extraPrice);
-            $("#extraServicePrice_" + index).val(extraPrice);
-            $("#firstPriceDiv_" + index).html('NT$ ' + firstPrice);
-            $("#firstPrice_" + index).val(firstPrice);
-            $("#checkPriceDiv").html('NT$ ' + checkPrice);
-            $("#checkPrice").val(checkPrice);
-            $("#totalPriceDiv").html('NT$ ' + totalPrice);
-            $("#totalPrice").val(totalPrice);
-            
-        };
-    </script>
+        //     countExtraService($(this).val());
+        //     checked = $(this)
+        //     //判斷是否選取
+        //     if ($(this).is(':checked')) {
+        //     } 
+        //     else 
+        //     {
+        //     }
+        // });
+
+    });
+    function countExtraService(index)
+    {
+        var extraPrice = $("#extraServicePrice_" + index).val();
+        var firstPrice = $("#firstPrice_" + index).val();
+        var checkPrice = $("#checkPrice").val();
+        var totalPrice = $("#totalPrice").val();
+        if($("#extraService2_" + index).prop("checked"))
+        {
+            extraPrice = parseInt(extraPrice) + 350;
+            firstPrice = parseInt(firstPrice) + 350;
+            checkPrice = parseInt(checkPrice) + 350;
+            totalPrice = parseInt(totalPrice) + 350;
+        }
+        else
+        {
+            extraPrice = parseInt(extraPrice) - 350;
+            firstPrice = parseInt(firstPrice) - 350;
+            checkPrice = parseInt(checkPrice) - 350;
+            totalPrice = parseInt(totalPrice) - 350;
+        }
+        $("#extraServicePriceDiv_" + index).html('NT$ ' + extraPrice);
+        $("#extraServicePrice_" + index).val(extraPrice);
+        $("#firstPriceDiv_" + index).html('NT$ ' + firstPrice);
+        $("#firstPrice_" + index).val(firstPrice);
+        $("#checkPriceDiv").html('NT$ ' + checkPrice);
+        $("#checkPrice").val(checkPrice);
+        $("#totalPriceDiv").html('NT$ ' + totalPrice);
+        $("#totalPrice").val(totalPrice);
+    };
+    function countExtraService2(index)
+    {
+        var extraPrice = $("#extraServicePrice_" + index).val();
+        var firstPrice = $("#firstPrice_" + index).val();
+        var checkPrice = $("#checkPrice").val();
+        var totalPrice = $("#totalPrice").val();
+
+        if($("#extraService1_" + index).val() == 2)
+        {
+            extraPrice = parseInt(extraPrice) + 150;
+            firstPrice = parseInt(firstPrice) + 150;
+            checkPrice = parseInt(checkPrice) + 150;
+            totalPrice = parseInt(totalPrice) + 150;
+            $("#extraService1temp_" + index).val(1);
+        }
+        else if($("#extraService1temp_" + index).val() == 1)
+        {
+            extraPrice = parseInt(extraPrice) - 150;
+            firstPrice = parseInt(firstPrice) - 150;
+            checkPrice = parseInt(checkPrice) - 150;
+            totalPrice = parseInt(totalPrice) - 150;
+            $("#extraService1temp_" + index).val(0);
+        }
+        $("#extraServicePriceDiv_" + index).html('NT$ ' + extraPrice);
+        $("#extraServicePrice_" + index).val(extraPrice);
+        $("#firstPriceDiv_" + index).html('NT$ ' + firstPrice);
+        $("#firstPrice_" + index).val(firstPrice);
+        $("#checkPriceDiv").html('NT$ ' + checkPrice);
+        $("#checkPrice").val(checkPrice);
+        $("#totalPriceDiv").html('NT$ ' + totalPrice);
+        $("#totalPrice").val(totalPrice);
+        
+    };
+</script>
 @endsection

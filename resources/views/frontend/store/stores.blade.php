@@ -9,10 +9,10 @@
     </div>
     <div class="right-list">
         <ul class="nav">
-            <li><a href="">最新消息</a></li>
-            <li><a href="">常見問題</a></li>
-            <li><a href="">聯絡我們</a></li>
-            <li><a href="">實體店</a></li>
+            <li><a href="/news">最新消息</a></li>
+            <li><a href="/FAQ">常見問題</a></li>
+            <li><a href="/contact">聯絡我們</a></li>
+            <li><a href="/store">實體店</a></li>
             <li><a class="search-btn" href=""></a></li>
         </ul>
     </div>

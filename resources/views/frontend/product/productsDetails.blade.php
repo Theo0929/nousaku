@@ -376,6 +376,10 @@
         </div>
     </div>
 </section>
+
+@endsection
+
+@section('scriptSection')
 <script>
     $(function(){
         $("#addCartForm").on("submit" , function(e){
@@ -402,6 +406,7 @@
 
         });
         $("#addCart").on("click" , function(){
+            //alert('');
             $("#addCartForm").submit();
         });
     });

@@ -61,6 +61,9 @@ Route::get('/backend/working' ,function () {
 //------------frontend-----------------------
 
 Route::get('/topMenu2' , 'App\Http\Controllers\Frontend\FrontMasterController@topMenu2');
+Route::get('/innerMenu2' , 'App\Http\Controllers\Frontend\FrontMasterController@innerMenu2');
+Route::get('/FAQ' , 'App\Http\Controllers\Frontend\FrontMasterController@FAQ');
+Route::get('/contact' , 'App\Http\Controllers\Frontend\FrontMasterController@contact');
 
 Route::get('/about1' , 'App\Http\Controllers\Frontend\AboutController@about1');
 Route::get('/about2' , 'App\Http\Controllers\Frontend\AboutController@about2');
@@ -68,24 +71,24 @@ Route::get('/about3' , 'App\Http\Controllers\Frontend\AboutController@about3');
 
 Route::get('/brand/{bName}' , 'App\Http\Controllers\Frontend\BrandController@brand');
 
+Route::get('/products/{category?}' , 'App\Http\Controllers\Frontend\ProductController@products');
+Route::get('/productsAll/{category?}' , 'App\Http\Controllers\Frontend\ProductController@productsAll');
+Route::get('/productsNew' , 'App\Http\Controllers\Frontend\ProductController@productsNew');
+Route::get('/productsDetails/{pid}' , 'App\Http\Controllers\Frontend\ProductController@productsDetails');
+Route::get('/productSection04' , 'App\Http\Controllers\Frontend\ProductController@productSection04');
+
+Route::get('/cart' , 'App\Http\Controllers\Frontend\CartController@cart');
+Route::get('/cartOrder/{orderid}' , 'App\Http\Controllers\Frontend\CartController@cartOrder');
+Route::post('/cartAdd' , 'App\Http\Controllers\Frontend\CartController@cartAdd');
+Route::post('/cartCheckout' , 'App\Http\Controllers\Frontend\CartController@cartCheckout');
+
 Route::get('/gifts' , 'App\Http\Controllers\Frontend\GiftController@gifts');
 
 Route::get('/news' , 'App\Http\Controllers\Frontend\NewsController@news');
 Route::get('/newsDetails' , 'App\Http\Controllers\Frontend\NewsController@newsDetails');
-
-Route::get('/products' , 'App\Http\Controllers\Frontend\ProductController@products');
-Route::get('/productsAll' , 'App\Http\Controllers\Frontend\ProductController@productsAll');
-Route::get('/productsNew' , 'App\Http\Controllers\Frontend\ProductController@productsNew');
-Route::get('/productsDetails/{pid}' , 'App\Http\Controllers\Frontend\ProductController@productsDetails');
-Route::get('/productSection04' , 'App\Http\Controllers\Frontend\ProductController@productSection04');
 
 Route::get('/specials' , 'App\Http\Controllers\Frontend\SpecialController@specials');
 Route::get('/specialDetails' , 'App\Http\Controllers\Frontend\SpecialController@specialDetails');
 
 Route::get('/stores' , 'App\Http\Controllers\Frontend\StoreController@stores');
 Route::get('/storeDetails' , 'App\Http\Controllers\Frontend\StoreController@storeDetails');
-
-Route::get('/cart' , 'App\Http\Controllers\Frontend\CartController@cart');
-Route::get('/cartOrder/{orderid}' , 'App\Http\Controllers\Frontend\CartController@cartOrder');
-Route::post('/cartAdd' , 'App\Http\Controllers\Frontend\CartController@cartAdd');
-Route::post('/cartCheckout' , 'App\Http\Controllers\Frontend\CartController@cartCheckout');

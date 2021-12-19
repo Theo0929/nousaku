@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class ProductController extends Controller
 {
@@ -12,34 +13,18 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function products()
+    public function products($category = 0)
     {
         //
-        $binding = [
-            'path' => 'home',
-            'result' => 'products',
-        ];
+        $binding = $this->getProductsAll($category);
         return view('frontend.product.products' , $binding);
     }
-    public function productsAll()
+    public function productsAll($category = 0)
     {
         //
-        $productList = DB::select('select * from product where deleteflag = ?', array(0));
-        $brandList = DB::select('select * from product_brand where deleteflag = ?', array(0));
-        $categoryList = DB::select('select * from product_category where deleteflag = ?', array(0));
-        $statusList = array(
-            array('0' , '上架銷售中'), 
-            array('1' , '缺貨中') , 
-            array('3' ,'即將開賣')
-        );
-        $binding = [
-            'path' => 'home',
-            'result' => 'products',
-            'brandList' => $brandList,
-            'statusList' => $statusList,
-            'categoryList' => $categoryList,
-            'productList' => $productList,
-        ];
+        //$productList = DB::select('select * from product where deleteflag = ?  group by pgroup', array(0));
+        
+        $binding = $this->getProductsAll($category);
 
         return view('frontend.product.productsAll' , $binding);
     }
@@ -91,7 +76,51 @@ class ProductController extends Controller
             'productList' => $productList,
         ];
 
-         return view('frontend.product.productSection04' , $binding);
+         return view('frontend.product.pSection04' , $binding);
         //return view('frontend.product.p1' , $binding);
+    }
+
+    private function getProductsAll($category)
+    {
+        $categoryName = "";
+        if ($category == 0) {
+            
+            $productList = DB::select('select * from product where deleteflag = ? group by pgroup', array(0));
+            $productList1 = DB::select('select * from product where deleteflag = ? and pgroup is null' , array(0));
+            $productList += $productList1 ;
+        }
+        else
+        {
+            $categorySelected = DB::table('product_category')
+            ->where('deleteflag' , 0)
+            ->where('pcid' , $category)
+            ->first();
+            $categoryName = $categorySelected -> pcname;
+            $productList = DB::select('select * from product where deleteflag = ? and category = ? group by pgroup', array(0, $category));
+            $productList1 = DB::select('select * from product where deleteflag = ? and category = ? and pgroup is null' , array(0 , $category));
+            $productList += $productList1 ;
+        }
+
+        $productListBrand = array();
+
+        $brandList = DB::select('select * from product_brand where deleteflag = ?', array(0));
+        
+        $categoryList = DB::select('select * from product_category where deleteflag = ?', array(0));
+        $statusList = array(
+            array('0' , '上架銷售中'), 
+            array('1' , '缺貨中') , 
+            array('3' ,'即將開賣')
+        );
+        $binding = [
+            'path' => 'home',
+            'result' => 'products',
+            'brandList' => $brandList,
+            'statusList' => $statusList,
+            'categoryList' => $categoryList,
+            'productList' => $productList,
+            'productListBrand' => $productListBrand,
+            'categoryName' => $categoryName
+        ];
+        return $binding;
     }
 }

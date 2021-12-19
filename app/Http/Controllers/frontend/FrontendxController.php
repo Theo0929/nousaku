@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class FrontendController extends Controller
+class FrontendxController extends Controller
 {
     /**
      * Display a listing of the resource.

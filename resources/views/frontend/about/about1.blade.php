@@ -39,9 +39,9 @@
                 能作確立自有品牌之路的契機為平成13年（2001年），當時能作參與東京原宿舉辦的『鈴・林・燐』展覽會。在這場展覽會中，能作因推出淋漓盡致且展現黃銅之美的搖鈴而備受注目，並因此受到多家選品店青睞。在當時銷售員建議下，能作在搖鈴上加裝紙籤改造成風鈴，這項商品推出後一炮而紅，每月能賣出超過1000多個風鈴。從此能作克治決定，開發商品時同時也要傾聽消費者的聲音與意見。現今能作的主力品項—100%純錫製商品，也是因銷售員提出『許多顧客想找餐具類商品』的建議才誕生。
             </p>
             <div class="img-item">
-                <img src="images/about/01/contant_01.jpg" alt="">
+                <img src="/nousaku_html/images/about/01/contant_01.jpg" alt="">
                 <div class="small-item">
-                    <img src="images/about/01/contant_02.jpg" alt="">
+                    <img src="/nousaku_html/images/about/01/contant_02.jpg" alt="">
                 </div>
             </div>
             <p>
@@ -83,7 +83,7 @@
         <div class="about_slider-item">
             <div class="img-wrap">
                 <div class="img-item">
-                    <img src="images/about/list_01.jpg" alt="">
+                    <img src="/nousaku_html/images/about/list_01.jpg" alt="">
                 </div>
             </div>
             <p>可以與陶器和玻璃器皿結合使用</p>
@@ -91,7 +91,7 @@
         <div class="about_slider-item">
             <div class="img-wrap">
                 <div class="img-item">
-                    <img src="images/about/list_02.jpg" alt="">
+                    <img src="/nousaku_html/images/about/list_02.jpg" alt="">
                 </div>
             </div>
             <p>柔韌性和可彎曲性</p>
@@ -99,7 +99,7 @@
         <div class="about_slider-item">
             <div class="img-wrap">
                 <div class="img-item">
-                    <img src="images/about/list_03.jpg" alt="">
+                    <img src="/nousaku_html/images/about/list_03.jpg" alt="">
                 </div>
             </div>
             <p>最初是扁平的形狀</p>
@@ -107,7 +107,7 @@
         <div class="about_slider-item">
             <div class="img-wrap">
                 <div class="img-item">
-                    <img src="images/about/list_01.jpg" alt="">
+                    <img src="/nousaku_html/images/about/list_01.jpg" alt="">
                 </div>
             </div>
             <p>最初是扁平的形狀</p>
@@ -124,7 +124,7 @@
                 <a href="" class="news_slider-item">
                     <div class="img-wrap">
                         <div class="img-item">
-                            <img src="images/about/list_02.jpg" alt="">
+                            <img src="/nousaku_html/images/about/list_02.jpg" alt="">
                         </div>
                     </div>
                     <p class="text-date">鑄造技術</p>
@@ -135,7 +135,7 @@
                 <a href="" class="news_slider-item">
                     <div class="img-wrap">
                         <div class="img-item">
-                            <img src="images/about/list_03.jpg" alt="">
+                            <img src="/nousaku_html/images/about/list_03.jpg" alt="">
                         </div>
                     </div>
                     <p class="text-date">高岡</p>

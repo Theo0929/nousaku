@@ -163,825 +163,94 @@
     </div>
 </section>
 
-<section class="section04">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3 product-sidebar">
-                <h2>製品一覽</h2>
-                <ul class="product-list mb-30 d-lg-block d-none">
-                    <li><a href="">擺飾</a></li>
-                    <li><a href="">花瓶/陶器</a></li>
-                    <li><a href="">酒器</a></li>
-                    <li><a href="">盤子/餐盤/盤架</a></li>
-                    <li><a href="">咖啡杯/馬克杯</a></li>
-                    <li><a href="">茶具</a></li>
-                    <li><a href="">杯墊</a></li>
-                    <li><a href="">碗</a></li>
-                    <li><a href="">淺碟/小碟</a></li>
-                    <li><a href="">筷子/筷架</a></li>
-                </ul>
-                <div class="input-group d-lg-flex d-none">
-                    <input type="text" class="form-control" placeholder="〜 NT 5，000">
-                    <div class="input-group-append">
-                        <button class="btn" type="button" id="button-addon2">
-                            <img src="/nousaku_html/images/index/menu/search.png" onmouseover="this.src='images/index/menu/search_hover.png'" onmouseout="this.src='images/index/menu/search.png'" alt="" />
-                        </button>
+<p id="productSection04">
+    <section class="section04 product2-1-section01" id="pSection04">
+        <div class="container-fluid"> 
+            <div class="row">
+                <div class="col-lg-3 product-sidebar">
+                    <h2>製品一覽</h2>
+                    <ul class="product-list mb-30 d-lg-block d-none">
+                        @foreach ($categoryList as $citem)
+                            <li><a href="/productsAll/{{$citem->pcid}}">{{$citem->pcname}}</a></li>
+                        @endforeach                    
+                    </ul>
+                    <div class="input-group d-lg-flex d-none">
+                        <input type="text" class="form-control" placeholder="〜 NT 5，000">
+                        <div class="input-group-append">
+                            <button class="btn" type="button" id="button-addon2">
+                                <img src="/nousaku_html/images/index/menu/search.png" onmouseover="this.src='images/index/menu/search_hover.png'" onmouseout="this.src='images/index/menu/search.png'" alt="" />
+                            </button>
+                            {{-- {{var_dump($productListBrand)}} --}}
+                            {{-- @foreach ($productListBrand as $pbitem)
+                                @foreach ($pbitem as $pbitem2)
+                                    {{$pbitem2->brand}}
+                                    {{$pbitem2->pgroup}}
+                                @endforeach
+                            @endforeach --}}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="product-wrap">
-                    <div class="d-lg-block d-none">
-                        <ul class="product_slider custom-arrow3">
-                            <li>Nousaku Precious</li>
-                            <li>KAGO</li>
-                            <li>irodori</li>
-                            <li>Character</li>
-                            <li>Gift set</li>
-                            <li>新製品</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product_slider_nav">
-                        <div class="product_slider_nav-item">
-                            <div class="product-title">
-                                擺飾 / Nousaku Precious
-                            </div>
-                            <div class="row show-more-item1">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="row show-more-item1">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="text-center">
-                                <a href="javascript:;" class="show-more-btn1">
-                                    更多製品
-                                </a>
-                            </div>
+                <div class="col-lg-9">
+                    <div class="product-wrap" id="pWrap">
+                        <div class="d-lg-block d-none">
+                            <ul class="product_slider custom-arrow3">
+                                @foreach ($brandList as $bitem)
+                                <li>{{$bitem->pbname}}</li>
+                                @endforeach
+                                <li>新製品</li>
+                            </ul>
                         </div>
-                        <div class="product_slider_nav-item">
-                            <div class="product-title">
-                                擺飾 / KAGO
+                        
+                        <div class="product_slider_nav" id="pSliderNav">
+                            @foreach ($brandList as $bitem)
+                            <div class="product_slider_nav-item">
+                                <div class="product-title">
+                                    {{$bitem->pbname}} / {{$categoryName}}
+                                    <input type="hidden" name="" id="" value = "{{$bcount = $loop->index + 1}}">
+                                </div>
+                                <div class="row show-more-item{{$bcount}}">
+                                @foreach ($productList as $pitem)
+                                    @if ($loop->index < 12 && $bitem->pbid == $pitem->brand)
+                                        <a href="/productsDetails/{{$pitem->productid}}" class="product-item col-lg-3 col-6">
+                                            <div class="img-wrap">
+                                                <div class="img-item">
+                                                    <img src="/nousaku_html/images/index/product/01.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p>{{$pitem->pname}}</p>
+                                        </a>
+                                    @endif
+                                @endforeach
+                                </div>
+                                <div class="row show-more-item{{$bcount}}">
+                                @foreach ($productList as $pitem)
+                                    
+                                    @if ($loop->index >= 12  && $bitem->pbid == $pitem->brand)
+                                    
+                                        <a href="/productsDetails/{{$pitem->productid}}" class="product-item col-lg-3 col-6">
+                                            <div class="img-wrap">
+                                                <div class="img-item">
+                                                    <img src="/nousaku_html/images/index/product/01.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p>{{$pitem->pname}}</p>
+                                        </a>
+                                    @endif
+                                    @endforeach
+                                </div>
+                                <div class="text-center">
+                                    <a href="javascript:;" class="show-more-btn{{$bcount }}">
+                                        更多製品
+                                    </a>
+                                </div>
                             </div>
-                            <div class="row show-more-item2">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="row show-more-item2">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="text-center">
-                                <a href="javascript:;" class="show-more-btn2">
-                                    更多製品
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product_slider_nav-item">
-                            <div class="product-title">
-                                擺飾 / irodori
-                            </div>
-                            <div class="row show-more-item3">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="row show-more-item3">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="text-center">
-                                <a href="javascript:;" class="show-more-btn3">
-                                    更多製品
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product_slider_nav-item">
-                            <div class="product-title">
-                                擺飾 / irodori
-                            </div>
-                            <div class="row show-more-item4">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="row show-more-item4">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="text-center">
-                                <a href="javascript:;" class="show-more-btn4">
-                                    更多製品
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product_slider_nav-item">
-                            <div class="product-title">
-                                擺飾 / irodori
-                            </div>
-                            <div class="row show-more-item5">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="row show-more-item5">
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/03.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/04.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/05.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>貝爾·斯利姆</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/06.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>啤酒杯</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/01.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>花連指手套</p>
-                                </a>
-                                <a href="" class="product-item col-lg-3 col-6">
-                                    <div class="img-wrap">
-                                        <div class="img-item">
-                                            <img src="/nousaku_html/images/index/product/02.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <p>黃銅花型底座</p>
-                                </a>
-                            </div>
-                            <div class="text-center">
-                                <a href="javascript:;" class="show-more-btn5">
-                                    更多製品
-                                </a>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
+    
+    </p>
 @endsection

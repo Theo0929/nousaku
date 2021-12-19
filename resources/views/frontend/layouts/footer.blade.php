@@ -24,7 +24,7 @@
         <ul class="nav list-2">
             <li><a href="">加入會員</a></li>
             <li><a href="/news">最新情報</a></li>
-            <li><a href="/faq">常見問答</a></li>
+            <li><a href="/FAQ">常見問答</a></li>
             <li><a href="/stores">實體店</a></li>
         </ul>
     </div>

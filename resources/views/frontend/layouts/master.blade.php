@@ -64,10 +64,9 @@
                                     </ul>
                                 </li>
                                 <li class="mobile-link has-ul">
-                                    <a href="#">製品<span>Precious</span></a>
-                                    <div class="sec-list"  id="topMenu2">
-                                        
-                                    </div>
+                                    <p id="topMenu2">
+                                    
+                                    </p>
                                 </li>
                                 <li class="mobile-link has-ul">
                                     <a href="#">禮贈<span>Gift</span></a>
@@ -102,10 +101,10 @@
                                 <li><a href="/news">最新情報</a></li>
                                 <li><a href="">購物須知</a></li>
                                 <li><a href="">加入會員</a></li>
-                                <li><a href="">聯絡我們</a></li>
+                                <li><a href="/contact">聯絡我們</a></li>
                                 <li><a href="">運送流程</a></li>
                                 <li><a href="">日本能作</a></li>
-                                <li><a href="">常見問題</a></li>
+                                <li><a href="/FAQ">常見問題</a></li>
                                 <li><a href="">企業合作</a></li>
                                 <li><a href="">企業概要</a></li>
                                 <li><a href="/stores">實體店</a></li>
@@ -128,7 +127,7 @@
                 </div>
             </nav>
         </div> 
-
+        
     </div>
 
     <div class="content">
@@ -136,7 +135,9 @@
             <a class="inside-logo" href="">
                 <img src="/nousaku_html/images/index/logo_black.png" alt="">
             </a>
-            @include('frontend.layouts.insideMenu')
+            <p id="innerMenu2">
+                 
+            </p>
         </div>
         @yield('bodySections')
     </div>
@@ -161,7 +162,14 @@
             $('#topMenu2').append(data);
             //$('#productSection04').append(data);
         });
+        $.get('/innerMenu2' , function(data){
+            $('#innerMenu2').append(data);
+            //$('#productSection04').append(data);
+        });
+        
     });
 </script>
+
 @yield('scriptSection')
+
 </html>
